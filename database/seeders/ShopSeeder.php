@@ -140,5 +140,13 @@ class ShopSeeder extends Seeder
             'created_at' => $now,
             'updated_at' => $now,
         ]);
+
+        DB::table('users')->insert([
+            'email'=>'admin@example.com',
+            'name'=>'Admin',
+            'password'=>bcrypt('password'),
+            'role'=>'admin',
+            'is_active'=>1,
+        ]);
     }
 }
